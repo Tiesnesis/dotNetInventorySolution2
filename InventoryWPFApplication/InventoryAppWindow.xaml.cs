@@ -140,5 +140,9 @@ namespace InventoryWPFApplication
             }
         }
 
+        private void listViewInventoryData_Copy_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

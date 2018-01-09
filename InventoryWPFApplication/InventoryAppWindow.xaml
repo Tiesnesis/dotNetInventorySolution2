@@ -1,11 +1,11 @@
 ﻿<Window x:Class="InventoryWPFApplication.InventoryAppWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="570.612" Width="588.539">
-    <Grid>
-        <Grid Margin="20,0,10.4,27.4">
+        Title="MainWindow" Height="608.412" Width="1329.539">
+    <Grid Margin="10,10,0,13" HorizontalAlignment="Left" Width="1273">
+        <Grid Margin="12,10,707,17">
             <Rectangle Margin="12,12,12,0" Name="rectangle1" Stroke="Black" Height="95.445" VerticalAlignment="Top" RadiusX="10" RadiusY="10" StrokeDashCap="Round" ClipToBounds="False" />
-            <Rectangle Margin="12,121.806,12,0" Name="rectangle2" Stroke="Black" RadiusX="10" RadiusY="10" Height="166" VerticalAlignment="Top" />
+            <Rectangle Margin="12,122,12,0" Name="rectangle2" Stroke="Black" RadiusX="10" RadiusY="10" Height="186" VerticalAlignment="Top" />
             <Label Height="28" HorizontalAlignment="Left" Margin="49.086,28.179,0,0" Name="label1" VerticalAlignment="Top" Width="120">First Name:</Label>
             <Label Height="28" HorizontalAlignment="Left" Margin="49.086,61.812,0,0" Name="label2" VerticalAlignment="Top" Width="120">Last Name:</Label>
             <TextBox Height="23" Margin="129.078,32.724,168.165,0" Name="txtBoxFN" VerticalAlignment="Top" />
@@ -29,7 +29,7 @@
             <Label Height="28" HorizontalAlignment="Left" Margin="50,243,0,0" Name="label9" VerticalAlignment="Top" Width="133.623">Search Part by Descr.:</Label>
             <TextBox Height="23" Margin="188,243,168,0" Name="textBoxSearchByDescr" VerticalAlignment="Top" />
             <Button Height="23" HorizontalAlignment="Right" Margin="0,243,43,0" Name="btnSearch" VerticalAlignment="Top" Width="111.807" Click="btnSearch_Click">Search</Button>
-            <ListView Margin="12,310,11.946,50" Name="listViewInventoryData">
+            <ListView Margin="12,313,12,50" Name="listViewInventoryData">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Width="60" DisplayMemberBinding="{Binding Path=ID}" Header="ID" />
@@ -53,6 +53,71 @@
                 </Button.RenderTransform> GetBalance
             </Button>
             <Button Height="23" HorizontalAlignment="Right" Margin="0,0,62.721,12" Name="btnGetReserved" VerticalAlignment="Bottom" Width="91.809" Click="btnGetReserved_Click">GetReserved</Button>
+            <TextBox HorizontalAlignment="Right" Margin="0,270,167.6,0" x:Name="txtBoxResCount_Copy" Width="46" Height="25" VerticalAlignment="Top" />
+            <Button HorizontalAlignment="Right" Margin="0,270,42.6,0" x:Name="btnReserve_Copy" Width="112" Height="25" VerticalAlignment="Top" Click="btnReserve_Click" Content="Delete"/>
+            <Label Height="28" HorizontalAlignment="Left" Margin="283,270,0,0" x:Name="label9_Copy" VerticalAlignment="Top" Width="51" Content="Part ID:" FontWeight="Bold"/>
+            <Rectangle Margin="566,-2,-525,0" x:Name="rectangle2_Copy" Stroke="Black" RadiusX="10" RadiusY="10" Height="186" VerticalAlignment="Top" />
+            <Label Height="28" HorizontalAlignment="Left" Margin="578,-2,-58,0" x:Name="label3_Copy" VerticalAlignment="Top" Width="37" Content="ID"/>
+            <Label Height="28" Margin="647,-2,-163,0" x:Name="label4_Copy" VerticalAlignment="Top" HorizontalAlignment="Left" Width="73" Content="First Name"/>
+            <Label Height="28" Margin="0,-2,-342,0" x:Name="label5_Copy" VerticalAlignment="Top" HorizontalAlignment="Right" Width="71" Content="Last Name"/>
+            <TextBox Height="23" HorizontalAlignment="Left" Margin="578,19,-84,0" x:Name="txtBoxIDCreate_Copy" VerticalAlignment="Top" Width="63" />
+            <TextBox Height="23" HorizontalAlignment="Left" Margin="647,20,-249,0" x:Name="txtBoxDescr_Copy" VerticalAlignment="Top" Width="159" />
+            <TextBox Height="23" Margin="812,20,-383,0" x:Name="txtBoxPrice_Copy" VerticalAlignment="Top" />
+            <Button Height="23" HorizontalAlignment="Right" Margin="0,19,-508,0" x:Name="btnCreateAdd_Copy" VerticalAlignment="Top" Width="112" Click="btnCreateAdd_Click" Content="Create/Add"/>
+            <Label Height="28" HorizontalAlignment="Left" Margin="578,119,-178,0" x:Name="label9_Copy1" VerticalAlignment="Top" Width="157" Content="Search user by Last name"/>
+            <TextBox Height="23" Margin="739,119,-383,0" x:Name="textBoxSearchByDescr_Copy" VerticalAlignment="Top" />
+            <Button Height="23" HorizontalAlignment="Right" Margin="0,119,-508,0" x:Name="btnSearch_Copy" VerticalAlignment="Top" Width="112" Click="btnSearch_Click" Content="Search"/>
+            <TextBox HorizontalAlignment="Right" Margin="0,146,-383,0" x:Name="txtBoxResCount_Copy2" Width="46" Height="25" VerticalAlignment="Top" />
+            <Button HorizontalAlignment="Right" Margin="0,146,-508,0" x:Name="btnReserve_Copy2" Width="112" Height="25" VerticalAlignment="Top" Click="btnReserve_Click" Content="Delete"/>
+            <Label Height="28" HorizontalAlignment="Left" Margin="830,146,-328,0" x:Name="label9_Copy2" VerticalAlignment="Top" Width="55" Content="User ID:"/>
+            <Label Height="28" HorizontalAlignment="Left" Margin="578,91,-178,0" x:Name="label9_Copy3" VerticalAlignment="Top" Width="157" Content="Search user by First name.:"/>
+            <TextBox Height="23" Margin="739,91,-383,0" x:Name="textBoxSearchByDescr_Copy1" VerticalAlignment="Top" />
+            <Button Height="23" HorizontalAlignment="Right" Margin="0,91,-508,0" x:Name="btnSearch_Copy1" VerticalAlignment="Top" Width="112" Click="btnSearch_Click" Content="Search"/>
+            <Button Height="23" HorizontalAlignment="Right" Margin="0,52,-508,0" x:Name="btnSearch_Copy2" VerticalAlignment="Top" Width="112" Click="btnSearch_Click" Content="Get All Users"/>
+            <Label Height="35" HorizontalAlignment="Left" Margin="586,51,-249,0" x:Name="label9_Copy4" VerticalAlignment="Top" Width="220" Content="User Management" FontSize="22"/>
+            <Rectangle Margin="577,338,-536,0" x:Name="rectangle2_Copy1" Stroke="Black" RadiusX="10" RadiusY="10" Height="186" VerticalAlignment="Top" />
+            <Label Height="28" HorizontalAlignment="Left" Margin="589,338,-72,0" x:Name="label3_Copy1" VerticalAlignment="Top" Width="37" Content="ID"/>
+            <Label Height="28" Margin="658,338,-177,0" x:Name="label4_Copy1" VerticalAlignment="Top" HorizontalAlignment="Left" Width="73" Content="User ID"/>
+            <Label Height="28" Margin="0,338,-242,0" x:Name="label5_Copy1" VerticalAlignment="Top" HorizontalAlignment="Right" Width="71" Content="Inv ID"/>
+            <TextBox Height="23" HorizontalAlignment="Left" Margin="589,359,-98,0" x:Name="txtBoxIDCreate_Copy1" VerticalAlignment="Top" Width="63" />
+            <TextBox Height="23" HorizontalAlignment="Left" Margin="658,360,-166,0" x:Name="txtBoxDescr_Copy1" VerticalAlignment="Top" Width="62" />
+            <TextBox Height="23" Margin="725,359,-242,0" x:Name="txtBoxPrice_Copy1" VerticalAlignment="Top" />
+            <Button Height="23" HorizontalAlignment="Right" Margin="0,359,-519,0" x:Name="btnCreateAdd_Copy1" VerticalAlignment="Top" Width="112" Click="btnCreateAdd_Click" Content="Create/Add"/>
+            <Label Height="28" HorizontalAlignment="Left" Margin="589,459,-192,0" x:Name="label9_Copy5" VerticalAlignment="Top" Width="157" Content="Search by Inv ID"/>
+            <TextBox Height="23" Margin="750,459,-394,0" x:Name="textBoxSearchByDescr_Copy2" VerticalAlignment="Top" />
+            <Button Height="23" HorizontalAlignment="Right" Margin="0,459,-519,0" x:Name="btnSearch_Copy3" VerticalAlignment="Top" Width="112" Click="btnSearch_Click" Content="Search"/>
+            <TextBox HorizontalAlignment="Right" Margin="0,486,-394,0" x:Name="txtBoxResCount_Copy1" Width="46" Height="25" VerticalAlignment="Top" />
+            <Button HorizontalAlignment="Right" Margin="0,486,-519,0" x:Name="btnReserve_Copy1" Width="112" Height="25" VerticalAlignment="Top" Click="btnReserve_Click" Content="Delete"/>
+            <Label Height="28" HorizontalAlignment="Left" Margin="841,486,-342,0" x:Name="label9_Copy6" VerticalAlignment="Top" Width="55" Content="Part ID:"/>
+            <Label Height="28" HorizontalAlignment="Left" Margin="589,431,-192,0" x:Name="label9_Copy7" VerticalAlignment="Top" Width="157" Content="Search User items by ID"/>
+            <TextBox Height="23" Margin="750,431,-394,0" x:Name="textBoxSearchByDescr_Copy3" VerticalAlignment="Top" />
+            <Button Height="23" HorizontalAlignment="Right" Margin="0,431,-519,0" x:Name="btnSearch_Copy4" VerticalAlignment="Top" Width="112" Click="btnSearch_Click" Content="Search"/>
+            <Button Height="23" HorizontalAlignment="Right" Margin="0,392,-519,0" x:Name="btnSearch_Copy5" VerticalAlignment="Top" Width="112" Click="btnSearch_Click" Content="Get All Carts"/>
+            <Label Height="35" HorizontalAlignment="Left" Margin="597,391,-263,0" x:Name="label9_Copy8" VerticalAlignment="Top" Width="220" Content="Cart" FontSize="22"/>
+            <Button HorizontalAlignment="Right" Margin="0,490,-282,0" x:Name="btnReserve_Copy3" Width="64" Height="25" VerticalAlignment="Top" Click="btnReserve_Click" Content="Buy"/>
+            <ListView Margin="566,189,-525,194" x:Name="listViewInventoryData_Copy" SelectionChanged="listViewInventoryData_Copy_SelectionChanged">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Width="40" DisplayMemberBinding="{Binding ID}" Header="ID" />
+                        <GridViewColumn Width="200" DisplayMemberBinding="{Binding FIRSTNAME}" Header="First Name" />
+                        <GridViewColumn Width="200" DisplayMemberBinding="{Binding LASTNAME}" Header="Last Name" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <ListView Margin="1095,343,-738,3" x:Name="listViewInventoryData_Copy1">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Width="40" DisplayMemberBinding="{Binding ID}" Header="ID" />
+                        <GridViewColumn Width="50" DisplayMemberBinding="{Binding USERID}" Header="User ID" />
+                        <GridViewColumn Width="50" DisplayMemberBinding="{Binding INVID}" Header="Inv ID" />
+                        <GridViewColumn Width="50" DisplayMemberBinding="{Binding COUNT}" Header="Count" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <TextBox Height="23" Margin="812,359,-394,0" x:Name="txtBoxPrice_Copy2" VerticalAlignment="Top" />
+            <Label Height="28" Margin="0,338,-329,0" x:Name="label5_Copy2" VerticalAlignment="Top" HorizontalAlignment="Right" Width="71" Content="Count"/>
+            <TextBox Height="23" Margin="696,491,-213,0" x:Name="txtBoxPrice_Copy3" VerticalAlignment="Top" />
+            <Label Height="28" Margin="647,491,-142,0" x:Name="label4_Copy2" VerticalAlignment="Top" HorizontalAlignment="Left" Width="49" Content="User ID"/>
         </Grid>
     </Grid>
 </Window>
