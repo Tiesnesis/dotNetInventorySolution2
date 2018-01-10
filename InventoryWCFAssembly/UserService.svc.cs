@@ -138,6 +138,20 @@ namespace InventoryWCFAssembly
                     select inv).ToList();
         }
 
+        public List<User> searchUserByFirstName(String name)
+        {
+            return (from usr in inventoryDataContext.Users
+                    where usr.FIRST_NAME.Contains(name)
+                    select usr).ToList();
+        }
+
+        public List<User> searchUserByLastName(String name)
+        {
+            return (from usr in inventoryDataContext.Users
+                    where usr.LAST_NAME.Contains(name)
+                    select usr).ToList();
+        }
+
 
         public List<Inventory> getAllParts()
         {

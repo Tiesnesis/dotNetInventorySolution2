@@ -31,6 +31,13 @@ namespace InventoryWCFAssembly
         bool reservePart(String id, int count);
 
         [OperationContract]
+        List<User> searchUserByFirstName(String name);
+
+
+        [OperationContract]
+        List<User> searchUserByLastName(String name);
+
+        [OperationContract]
         List<Inventory> searchPartByDescription(String descr);
 
         [OperationContract]

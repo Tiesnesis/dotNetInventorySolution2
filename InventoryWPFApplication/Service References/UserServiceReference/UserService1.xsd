@@ -91,6 +91,34 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="searchUserByFirstName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="searchUserByFirstNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/InventoryDataAssembly" minOccurs="0" name="searchUserByFirstNameResult" nillable="true" type="q1:ArrayOfUser" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="searchUserByLastName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="searchUserByLastNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/InventoryDataAssembly" minOccurs="0" name="searchUserByLastNameResult" nillable="true" type="q2:ArrayOfUser" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="searchPartByDescription">
     <xs:complexType>
       <xs:sequence>
@@ -101,7 +129,7 @@
   <xs:element name="searchPartByDescriptionResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/InventoryDataAssembly" minOccurs="0" name="searchPartByDescriptionResult" nillable="true" type="q1:ArrayOfInventory" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/InventoryDataAssembly" minOccurs="0" name="searchPartByDescriptionResult" nillable="true" type="q3:ArrayOfInventory" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -113,7 +141,7 @@
   <xs:element name="getAllPartsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/InventoryDataAssembly" minOccurs="0" name="getAllPartsResult" nillable="true" type="q2:ArrayOfInventory" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/InventoryDataAssembly" minOccurs="0" name="getAllPartsResult" nillable="true" type="q4:ArrayOfInventory" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -125,7 +153,7 @@
   <xs:element name="getAllUsersResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/InventoryDataAssembly" minOccurs="0" name="getAllUsersResult" nillable="true" type="q3:ArrayOfUser" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/InventoryDataAssembly" minOccurs="0" name="getAllUsersResult" nillable="true" type="q5:ArrayOfUser" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

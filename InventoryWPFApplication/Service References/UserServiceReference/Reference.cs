@@ -15,6 +15,83 @@ namespace InventoryWPFApplication.UserServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="User", Namespace="http://schemas.datacontract.org/2004/07/InventoryDataAssembly")]
+    [System.SerializableAttribute()]
+    public partial class User : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FIRST_NAMEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LAST_NAMEField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FIRST_NAME {
+            get {
+                return this.FIRST_NAMEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FIRST_NAMEField, value) != true)) {
+                    this.FIRST_NAMEField = value;
+                    this.RaisePropertyChanged("FIRST_NAME");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string LAST_NAME {
+            get {
+                return this.LAST_NAMEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LAST_NAMEField, value) != true)) {
+                    this.LAST_NAMEField = value;
+                    this.RaisePropertyChanged("LAST_NAME");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Inventory", Namespace="http://schemas.datacontract.org/2004/07/InventoryDataAssembly")]
     [System.SerializableAttribute()]
     public partial class Inventory : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -122,83 +199,6 @@ namespace InventoryWPFApplication.UserServiceReference {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="User", Namespace="http://schemas.datacontract.org/2004/07/InventoryDataAssembly")]
-    [System.SerializableAttribute()]
-    public partial class User : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FIRST_NAMEField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string LAST_NAMEField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string FIRST_NAME {
-            get {
-                return this.FIRST_NAMEField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FIRST_NAMEField, value) != true)) {
-                    this.FIRST_NAMEField = value;
-                    this.RaisePropertyChanged("FIRST_NAME");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ID {
-            get {
-                return this.IDField;
-            }
-            set {
-                if ((this.IDField.Equals(value) != true)) {
-                    this.IDField = value;
-                    this.RaisePropertyChanged("ID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string LAST_NAME {
-            get {
-                return this.LAST_NAMEField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LAST_NAMEField, value) != true)) {
-                    this.LAST_NAMEField = value;
-                    this.RaisePropertyChanged("LAST_NAME");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="UserServiceReference.IUserService")]
     public interface IUserService {
@@ -238,6 +238,18 @@ namespace InventoryWPFApplication.UserServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/reservePart", ReplyAction="http://tempuri.org/IUserService/reservePartResponse")]
         System.Threading.Tasks.Task<bool> reservePartAsync(string id, int count);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/searchUserByFirstName", ReplyAction="http://tempuri.org/IUserService/searchUserByFirstNameResponse")]
+        System.Collections.Generic.List<InventoryWPFApplication.UserServiceReference.User> searchUserByFirstName(string name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/searchUserByFirstName", ReplyAction="http://tempuri.org/IUserService/searchUserByFirstNameResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<InventoryWPFApplication.UserServiceReference.User>> searchUserByFirstNameAsync(string name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/searchUserByLastName", ReplyAction="http://tempuri.org/IUserService/searchUserByLastNameResponse")]
+        System.Collections.Generic.List<InventoryWPFApplication.UserServiceReference.User> searchUserByLastName(string name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/searchUserByLastName", ReplyAction="http://tempuri.org/IUserService/searchUserByLastNameResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<InventoryWPFApplication.UserServiceReference.User>> searchUserByLastNameAsync(string name);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/searchPartByDescription", ReplyAction="http://tempuri.org/IUserService/searchPartByDescriptionResponse")]
         System.Collections.Generic.List<InventoryWPFApplication.UserServiceReference.Inventory> searchPartByDescription(string descr);
@@ -349,6 +361,22 @@ namespace InventoryWPFApplication.UserServiceReference {
         
         public System.Threading.Tasks.Task<bool> reservePartAsync(string id, int count) {
             return base.Channel.reservePartAsync(id, count);
+        }
+        
+        public System.Collections.Generic.List<InventoryWPFApplication.UserServiceReference.User> searchUserByFirstName(string name) {
+            return base.Channel.searchUserByFirstName(name);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<InventoryWPFApplication.UserServiceReference.User>> searchUserByFirstNameAsync(string name) {
+            return base.Channel.searchUserByFirstNameAsync(name);
+        }
+        
+        public System.Collections.Generic.List<InventoryWPFApplication.UserServiceReference.User> searchUserByLastName(string name) {
+            return base.Channel.searchUserByLastName(name);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<InventoryWPFApplication.UserServiceReference.User>> searchUserByLastNameAsync(string name) {
+            return base.Channel.searchUserByLastNameAsync(name);
         }
         
         public System.Collections.Generic.List<InventoryWPFApplication.UserServiceReference.Inventory> searchPartByDescription(string descr) {

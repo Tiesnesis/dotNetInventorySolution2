@@ -43,6 +43,18 @@
   <wsdl:message name="IUserService_reservePart_OutputMessage">
     <wsdl:part name="parameters" element="tns:reservePartResponse" />
   </wsdl:message>
+  <wsdl:message name="IUserService_searchUserByFirstName_InputMessage">
+    <wsdl:part name="parameters" element="tns:searchUserByFirstName" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_searchUserByFirstName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:searchUserByFirstNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_searchUserByLastName_InputMessage">
+    <wsdl:part name="parameters" element="tns:searchUserByLastName" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_searchUserByLastName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:searchUserByLastNameResponse" />
+  </wsdl:message>
   <wsdl:message name="IUserService_searchPartByDescription_InputMessage">
     <wsdl:part name="parameters" element="tns:searchPartByDescription" />
   </wsdl:message>
@@ -103,6 +115,14 @@
     <wsdl:operation name="reservePart">
       <wsdl:input wsaw:Action="http://tempuri.org/IUserService/reservePart" message="tns:IUserService_reservePart_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IUserService/reservePartResponse" message="tns:IUserService_reservePart_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="searchUserByFirstName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/searchUserByFirstName" message="tns:IUserService_searchUserByFirstName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/searchUserByFirstNameResponse" message="tns:IUserService_searchUserByFirstName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="searchUserByLastName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/searchUserByLastName" message="tns:IUserService_searchUserByLastName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/searchUserByLastNameResponse" message="tns:IUserService_searchUserByLastName_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="searchPartByDescription">
       <wsdl:input wsaw:Action="http://tempuri.org/IUserService/searchPartByDescription" message="tns:IUserService_searchPartByDescription_InputMessage" />
@@ -178,6 +198,24 @@
     </wsdl:operation>
     <wsdl:operation name="reservePart">
       <soap:operation soapAction="http://tempuri.org/IUserService/reservePart" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchUserByFirstName">
+      <soap:operation soapAction="http://tempuri.org/IUserService/searchUserByFirstName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchUserByLastName">
+      <soap:operation soapAction="http://tempuri.org/IUserService/searchUserByLastName" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

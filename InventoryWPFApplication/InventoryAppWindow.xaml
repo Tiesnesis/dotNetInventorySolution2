@@ -64,13 +64,13 @@
             <Button Height="23" HorizontalAlignment="Right" Margin="0,19,-508,0" x:Name="btnCreateAddUser" VerticalAlignment="Top" Width="112" Click="btnCreateAddUser_Click" Content="Create/Add"/>
             <Label Height="28" HorizontalAlignment="Left" Margin="578,119,-178,0" x:Name="label9_Copy1" VerticalAlignment="Top" Width="157" Content="Search user by Last name"/>
             <TextBox Height="23" Margin="739,119,-383,0" x:Name="textSearchUserLastName" VerticalAlignment="Top" />
-            <Button Height="23" HorizontalAlignment="Right" Margin="0,119,-508,0" x:Name="btnSearchUserLastName" VerticalAlignment="Top" Width="112" Click="btnSearch_Click" Content="Search"/>
+            <Button Height="23" HorizontalAlignment="Right" Margin="0,119,-508,0" x:Name="btnSearchUserLastName" VerticalAlignment="Top" Width="112" Click="btnSearchUserByFirstName" Content="Search"/>
             <TextBox HorizontalAlignment="Right" Margin="0,146,-383,0" x:Name="txtDeleteUserID" Width="46" Height="25" VerticalAlignment="Top" />
             <Button HorizontalAlignment="Right" Margin="0,146,-508,0" x:Name="btnDeleteUser" Width="112" Height="25" VerticalAlignment="Top" Click="btnDeleteUser_Click" Content="Delete"/>
             <Label Height="28" HorizontalAlignment="Left" Margin="830,146,-328,0" x:Name="label9_Copy2" VerticalAlignment="Top" Width="55" Content="User ID:"/>
             <Label Height="28" HorizontalAlignment="Left" Margin="578,91,-178,0" x:Name="label9_Copy3" VerticalAlignment="Top" Width="157" Content="Search user by First name.:"/>
             <TextBox Height="23" Margin="739,91,-383,0" x:Name="textSearchUserFirstName" VerticalAlignment="Top" />
-            <Button Height="23" HorizontalAlignment="Right" Margin="0,91,-508,0" x:Name="btnSearchUserFirstName" VerticalAlignment="Top" Width="112" Click="btnSearch_Click" Content="Search"/>
+            <Button Height="23" HorizontalAlignment="Right" Margin="0,91,-508,0" x:Name="btnSearchUserFirstName" VerticalAlignment="Top" Width="112" Click="btnSearchUserByFirstName_Click" Content="Search"/>
             <Button Height="23" HorizontalAlignment="Right" Margin="0,52,-508,0" x:Name="btnAllUsers" VerticalAlignment="Top" Width="112" Click="btnAllUsers_Click" Content="Get All Users"/>
             <Label Height="35" HorizontalAlignment="Left" Margin="586,51,-249,0" x:Name="label9_Copy4" VerticalAlignment="Top" Width="220" Content="User Management" FontSize="22"/>
             <Rectangle Margin="577,338,-536,0" x:Name="rectangle2_Copy1" Stroke="Black" RadiusX="10" RadiusY="10" Height="186" VerticalAlignment="Top" />

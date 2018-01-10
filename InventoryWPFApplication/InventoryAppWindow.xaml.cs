@@ -178,5 +178,17 @@ namespace InventoryWPFApplication
             List<Inventory> results = proxy.getAllParts();
             listViewInventoryData.ItemsSource = results;
         }
+
+        private void btnSearchUserByFirstName_Click(object sender, RoutedEventArgs e)
+        {
+            List<User> results = proxy.searchUserByFirstName(textSearchUserFirstName.Text);
+            listViewUserData.ItemsSource = results;
+        }
+
+        private void btnSearchUserByFirstName(object sender, RoutedEventArgs e)
+        {
+            List<User> results = proxy.searchUserByLastName(textSearchUserLastName.Text);
+            listViewUserData.ItemsSource = results;
+        }
     }
 }
