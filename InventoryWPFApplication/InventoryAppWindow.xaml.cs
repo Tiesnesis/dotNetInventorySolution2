@@ -170,5 +170,13 @@ namespace InventoryWPFApplication
             List<User> results = proxy.getAllUsers();
             listViewUserData.ItemsSource = results;
         }
+
+        private void btnInvDelete_Click(object sender, RoutedEventArgs e)
+        {
+            proxy.deleteInventory(txtBoxInvDeleteID.Text);
+
+            List<Inventory> results = proxy.getAllParts();
+            listViewInventoryData.ItemsSource = results;
+        }
     }
 }

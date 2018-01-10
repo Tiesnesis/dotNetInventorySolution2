@@ -227,6 +227,12 @@ namespace InventoryWPFApplication.UserServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/deleteUser", ReplyAction="http://tempuri.org/IUserService/deleteUserResponse")]
         System.Threading.Tasks.Task<bool> deleteUserAsync(int id);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/deleteInventory", ReplyAction="http://tempuri.org/IUserService/deleteInventoryResponse")]
+        bool deleteInventory(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/deleteInventory", ReplyAction="http://tempuri.org/IUserService/deleteInventoryResponse")]
+        System.Threading.Tasks.Task<bool> deleteInventoryAsync(string id);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/reservePart", ReplyAction="http://tempuri.org/IUserService/reservePartResponse")]
         bool reservePart(string id, int count);
         
@@ -327,6 +333,14 @@ namespace InventoryWPFApplication.UserServiceReference {
         
         public System.Threading.Tasks.Task<bool> deleteUserAsync(int id) {
             return base.Channel.deleteUserAsync(id);
+        }
+        
+        public bool deleteInventory(string id) {
+            return base.Channel.deleteInventory(id);
+        }
+        
+        public System.Threading.Tasks.Task<bool> deleteInventoryAsync(string id) {
+            return base.Channel.deleteInventoryAsync(id);
         }
         
         public bool reservePart(string id, int count) {

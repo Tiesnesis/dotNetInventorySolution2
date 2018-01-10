@@ -53,8 +53,8 @@
                 </Button.RenderTransform> GetBalance
             </Button>
             <Button Height="23" HorizontalAlignment="Right" Margin="0,0,62.721,12" Name="btnGetReserved" VerticalAlignment="Bottom" Width="91.809" Click="btnGetReserved_Click">GetReserved</Button>
-            <TextBox HorizontalAlignment="Right" Margin="0,270,167.6,0" x:Name="txtBoxResCount_Copy" Width="46" Height="25" VerticalAlignment="Top" />
-            <Button HorizontalAlignment="Right" Margin="0,270,42.6,0" x:Name="btnReserve_Copy" Width="112" Height="25" VerticalAlignment="Top" Click="btnReserve_Click" Content="Delete"/>
+            <TextBox HorizontalAlignment="Right" Margin="0,270,167.6,0" x:Name="txtBoxInvDeleteID" Width="46" Height="25" VerticalAlignment="Top" />
+            <Button HorizontalAlignment="Right" Margin="0,270,42.6,0" x:Name="btnInvDelete" Width="112" Height="25" VerticalAlignment="Top" Click="btnInvDelete_Click" Content="Delete"/>
             <Label Height="28" HorizontalAlignment="Left" Margin="283,270,0,0" x:Name="label9_Copy" VerticalAlignment="Top" Width="51" Content="Part ID:" FontWeight="Bold"/>
             <Rectangle Margin="566,-2,-525,0" x:Name="rectangle2_Copy" Stroke="Black" RadiusX="10" RadiusY="10" Height="186" VerticalAlignment="Top" />
             <Label Height="28" Margin="647,-2,-163,0" x:Name="label4_Copy" VerticalAlignment="Top" HorizontalAlignment="Left" Width="73" Content="First Name"/>

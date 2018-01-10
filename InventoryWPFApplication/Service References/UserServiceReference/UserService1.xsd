@@ -62,6 +62,20 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="deleteInventory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deleteInventoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="deleteInventoryResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="reservePart">
     <xs:complexType>
       <xs:sequence>

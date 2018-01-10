@@ -25,6 +25,9 @@ namespace InventoryWCFAssembly
         bool deleteUser(int id);
 
         [OperationContract]
+        bool deleteInventory(String id);
+
+        [OperationContract]
         bool reservePart(String id, int count);
 
         [OperationContract]

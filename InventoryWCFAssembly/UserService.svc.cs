@@ -96,6 +96,24 @@ namespace InventoryWCFAssembly
         }
 
         [OperationBehavior(TransactionScopeRequired = true)]
+        public bool deleteInventory(String id)
+        {
+            if (id == null || id.Equals(""))
+                return false;
+
+            var inventoryData = from inv in inventoryDataContext.Inventories
+                                where inv.ID == id
+                                select inv;
+
+            if (inventoryData.Count() == 0)
+                return false;
+
+            inventoryDataContext.Inventories.Remove(inventoryData.First());
+            inventoryDataContext.SaveChanges();
+            return true;
+        }
+
+        [OperationBehavior(TransactionScopeRequired = true)]
         public bool reservePart(String id, int count)
         {
             if (id == null || id.Equals(""))
