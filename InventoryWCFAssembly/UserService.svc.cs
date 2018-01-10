@@ -67,6 +67,35 @@ namespace InventoryWCFAssembly
         }
 
         [OperationBehavior(TransactionScopeRequired = true)]
+        public bool addUser(String firstName, String lastName)
+        {
+            User newUser = new User();
+            newUser.FIRST_NAME = firstName;
+            newUser.LAST_NAME = lastName;
+            inventoryDataContext.Users.Add(newUser);
+            inventoryDataContext.SaveChanges();
+            return true;
+        }
+
+        [OperationBehavior(TransactionScopeRequired = true)]
+        public bool deleteUser(int id)
+        {
+            if (id == null || id.Equals(""))
+                return false;
+
+            var inventoryData = from usr in inventoryDataContext.Users
+                                where usr.ID == id
+                                select usr;
+
+            if (inventoryData.Count() == 0)
+                return false;
+
+            inventoryDataContext.Users.Remove(inventoryData.First());
+            inventoryDataContext.SaveChanges();
+            return true;
+        }
+
+        [OperationBehavior(TransactionScopeRequired = true)]
         public bool reservePart(String id, int count)
         {
             if (id == null || id.Equals(""))
@@ -95,6 +124,11 @@ namespace InventoryWCFAssembly
         public List<Inventory> getAllParts()
         {
             return inventoryDataContext.Inventories.OrderBy(c => c.DESCRIPTION).ToList();
+        }
+
+        public List<User> getAllUsers()
+        {
+            return inventoryDataContext.Users.ToList();
         }
 
         public double calculateTotal()

@@ -19,6 +19,18 @@
   <wsdl:message name="IUserService_addPart_OutputMessage">
     <wsdl:part name="parameters" element="tns:addPartResponse" />
   </wsdl:message>
+  <wsdl:message name="IUserService_addUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:addUser" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_addUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_deleteUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteUser" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_deleteUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteUserResponse" />
+  </wsdl:message>
   <wsdl:message name="IUserService_reservePart_InputMessage">
     <wsdl:part name="parameters" element="tns:reservePart" />
   </wsdl:message>
@@ -36,6 +48,12 @@
   </wsdl:message>
   <wsdl:message name="IUserService_getAllParts_OutputMessage">
     <wsdl:part name="parameters" element="tns:getAllPartsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_getAllUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAllUsers" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_getAllUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAllUsersResponse" />
   </wsdl:message>
   <wsdl:message name="IUserService_calculateTotal_InputMessage">
     <wsdl:part name="parameters" element="tns:calculateTotal" />
@@ -64,6 +82,14 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IUserService/addPart" message="tns:IUserService_addPart_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IUserService/addPartResponse" message="tns:IUserService_addPart_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="addUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/addUser" message="tns:IUserService_addUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/addUserResponse" message="tns:IUserService_addUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/deleteUser" message="tns:IUserService_deleteUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/deleteUserResponse" message="tns:IUserService_deleteUser_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="reservePart">
       <wsdl:input wsaw:Action="http://tempuri.org/IUserService/reservePart" message="tns:IUserService_reservePart_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IUserService/reservePartResponse" message="tns:IUserService_reservePart_OutputMessage" />
@@ -75,6 +101,10 @@
     <wsdl:operation name="getAllParts">
       <wsdl:input wsaw:Action="http://tempuri.org/IUserService/getAllParts" message="tns:IUserService_getAllParts_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IUserService/getAllPartsResponse" message="tns:IUserService_getAllParts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/getAllUsers" message="tns:IUserService_getAllUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/getAllUsersResponse" message="tns:IUserService_getAllUsers_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="calculateTotal">
       <wsdl:input wsaw:Action="http://tempuri.org/IUserService/calculateTotal" message="tns:IUserService_calculateTotal_InputMessage" />
@@ -109,6 +139,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="addUser">
+      <soap:operation soapAction="http://tempuri.org/IUserService/addUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteUser">
+      <soap:operation soapAction="http://tempuri.org/IUserService/deleteUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="reservePart">
       <soap:operation soapAction="http://tempuri.org/IUserService/reservePart" style="document" />
       <wsdl:input>
@@ -129,6 +177,15 @@
     </wsdl:operation>
     <wsdl:operation name="getAllParts">
       <soap:operation soapAction="http://tempuri.org/IUserService/getAllParts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllUsers">
+      <soap:operation soapAction="http://tempuri.org/IUserService/getAllUsers" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

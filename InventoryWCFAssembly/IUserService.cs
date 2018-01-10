@@ -19,6 +19,12 @@ namespace InventoryWCFAssembly
         bool addPart(String id, String descr, double price, int count);
 
         [OperationContract]
+        bool addUser(String firstName, String lastName);
+
+        [OperationContract]
+        bool deleteUser(int id);
+
+        [OperationContract]
         bool reservePart(String id, int count);
 
         [OperationContract]
@@ -26,6 +32,9 @@ namespace InventoryWCFAssembly
 
         [OperationContract]
         List<Inventory> getAllParts();
+
+        [OperationContract]
+        List<User> getAllUsers();
 
         [OperationContract]
         double calculateTotal();

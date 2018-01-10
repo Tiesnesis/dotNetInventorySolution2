@@ -144,5 +144,31 @@ namespace InventoryWPFApplication
         {
 
         }
+
+        private void btnAllUsers_Click(object sender, RoutedEventArgs e)
+        {
+            List<User> results = proxy.getAllUsers();
+            listViewUserData.ItemsSource = results;
+        }
+
+        private void btnCreateAddUser_Click(object sender, RoutedEventArgs e)
+        {
+            proxy.addUser(txtCreateUserFirstName.Text, txtCreateUserLastName.Text);
+
+            List<User> results = proxy.getAllUsers();
+            listViewUserData.ItemsSource = results;
+        }
+
+        private void btnDeleteUser_Click(object sender, RoutedEventArgs e)
+        {
+            int tmpInt;
+            {
+                tmpInt = System.Convert.ToInt32(txtDeleteUserID.Text);
+            }
+            proxy.deleteUser(tmpInt);
+
+            List<User> results = proxy.getAllUsers();
+            listViewUserData.ItemsSource = results;
+        }
     }
 }
