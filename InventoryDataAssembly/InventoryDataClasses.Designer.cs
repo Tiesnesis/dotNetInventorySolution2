@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\Edgars\D_disk\Darps\LUMII\LU_Kursi\BusComp\2016\Studio_Proj\InventorySolution\InventoryDataAssembly\InventoryDataClasses.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\User\Desktop\Repos\dotNetInventorySolution\InventorySolution\InventoryDataAssembly\InventoryDataClasses.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

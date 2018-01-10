@@ -92,6 +92,99 @@ namespace InventoryWPFApplication.UserServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CART_TABLE", Namespace="http://schemas.datacontract.org/2004/07/InventoryDataAssembly")]
+    [System.SerializableAttribute()]
+    public partial class CART_TABLE : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string COUNTField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string INV_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string USR_IDField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string COUNT {
+            get {
+                return this.COUNTField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.COUNTField, value) != true)) {
+                    this.COUNTField = value;
+                    this.RaisePropertyChanged("COUNT");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string INV_ID {
+            get {
+                return this.INV_IDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.INV_IDField, value) != true)) {
+                    this.INV_IDField = value;
+                    this.RaisePropertyChanged("INV_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string USR_ID {
+            get {
+                return this.USR_IDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.USR_IDField, value) != true)) {
+                    this.USR_IDField = value;
+                    this.RaisePropertyChanged("USR_ID");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Inventory", Namespace="http://schemas.datacontract.org/2004/07/InventoryDataAssembly")]
     [System.SerializableAttribute()]
     public partial class Inventory : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -245,6 +338,42 @@ namespace InventoryWPFApplication.UserServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/searchUserByFirstName", ReplyAction="http://tempuri.org/IUserService/searchUserByFirstNameResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<InventoryWPFApplication.UserServiceReference.User>> searchUserByFirstNameAsync(string name);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/addCart", ReplyAction="http://tempuri.org/IUserService/addCartResponse")]
+        bool addCart(string usrID, string invID, string count);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/addCart", ReplyAction="http://tempuri.org/IUserService/addCartResponse")]
+        System.Threading.Tasks.Task<bool> addCartAsync(string usrID, string invID, string count);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/deleteCart", ReplyAction="http://tempuri.org/IUserService/deleteCartResponse")]
+        bool deleteCart(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/deleteCart", ReplyAction="http://tempuri.org/IUserService/deleteCartResponse")]
+        System.Threading.Tasks.Task<bool> deleteCartAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/searchCartByUsrID", ReplyAction="http://tempuri.org/IUserService/searchCartByUsrIDResponse")]
+        System.Collections.Generic.List<InventoryWPFApplication.UserServiceReference.CART_TABLE> searchCartByUsrID(string usrID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/searchCartByUsrID", ReplyAction="http://tempuri.org/IUserService/searchCartByUsrIDResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<InventoryWPFApplication.UserServiceReference.CART_TABLE>> searchCartByUsrIDAsync(string usrID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/searchCartByInvID", ReplyAction="http://tempuri.org/IUserService/searchCartByInvIDResponse")]
+        System.Collections.Generic.List<InventoryWPFApplication.UserServiceReference.CART_TABLE> searchCartByInvID(string invID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/searchCartByInvID", ReplyAction="http://tempuri.org/IUserService/searchCartByInvIDResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<InventoryWPFApplication.UserServiceReference.CART_TABLE>> searchCartByInvIDAsync(string invID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/deleteCartByUserID", ReplyAction="http://tempuri.org/IUserService/deleteCartByUserIDResponse")]
+        bool deleteCartByUserID(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/deleteCartByUserID", ReplyAction="http://tempuri.org/IUserService/deleteCartByUserIDResponse")]
+        System.Threading.Tasks.Task<bool> deleteCartByUserIDAsync(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/getAllCarts", ReplyAction="http://tempuri.org/IUserService/getAllCartsResponse")]
+        System.Collections.Generic.List<InventoryWPFApplication.UserServiceReference.CART_TABLE> getAllCarts();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/getAllCarts", ReplyAction="http://tempuri.org/IUserService/getAllCartsResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<InventoryWPFApplication.UserServiceReference.CART_TABLE>> getAllCartsAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/searchUserByLastName", ReplyAction="http://tempuri.org/IUserService/searchUserByLastNameResponse")]
         System.Collections.Generic.List<InventoryWPFApplication.UserServiceReference.User> searchUserByLastName(string name);
         
@@ -369,6 +498,54 @@ namespace InventoryWPFApplication.UserServiceReference {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<InventoryWPFApplication.UserServiceReference.User>> searchUserByFirstNameAsync(string name) {
             return base.Channel.searchUserByFirstNameAsync(name);
+        }
+        
+        public bool addCart(string usrID, string invID, string count) {
+            return base.Channel.addCart(usrID, invID, count);
+        }
+        
+        public System.Threading.Tasks.Task<bool> addCartAsync(string usrID, string invID, string count) {
+            return base.Channel.addCartAsync(usrID, invID, count);
+        }
+        
+        public bool deleteCart(int id) {
+            return base.Channel.deleteCart(id);
+        }
+        
+        public System.Threading.Tasks.Task<bool> deleteCartAsync(int id) {
+            return base.Channel.deleteCartAsync(id);
+        }
+        
+        public System.Collections.Generic.List<InventoryWPFApplication.UserServiceReference.CART_TABLE> searchCartByUsrID(string usrID) {
+            return base.Channel.searchCartByUsrID(usrID);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<InventoryWPFApplication.UserServiceReference.CART_TABLE>> searchCartByUsrIDAsync(string usrID) {
+            return base.Channel.searchCartByUsrIDAsync(usrID);
+        }
+        
+        public System.Collections.Generic.List<InventoryWPFApplication.UserServiceReference.CART_TABLE> searchCartByInvID(string invID) {
+            return base.Channel.searchCartByInvID(invID);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<InventoryWPFApplication.UserServiceReference.CART_TABLE>> searchCartByInvIDAsync(string invID) {
+            return base.Channel.searchCartByInvIDAsync(invID);
+        }
+        
+        public bool deleteCartByUserID(string id) {
+            return base.Channel.deleteCartByUserID(id);
+        }
+        
+        public System.Threading.Tasks.Task<bool> deleteCartByUserIDAsync(string id) {
+            return base.Channel.deleteCartByUserIDAsync(id);
+        }
+        
+        public System.Collections.Generic.List<InventoryWPFApplication.UserServiceReference.CART_TABLE> getAllCarts() {
+            return base.Channel.getAllCarts();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<InventoryWPFApplication.UserServiceReference.CART_TABLE>> getAllCartsAsync() {
+            return base.Channel.getAllCartsAsync();
         }
         
         public System.Collections.Generic.List<InventoryWPFApplication.UserServiceReference.User> searchUserByLastName(string name) {

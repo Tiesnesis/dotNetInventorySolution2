@@ -33,6 +33,23 @@ namespace InventoryWCFAssembly
         [OperationContract]
         List<User> searchUserByFirstName(String name);
 
+        [OperationContract]
+        bool addCart(String usrID, String invID, String count);
+
+        [OperationContract]
+        bool deleteCart(int id);
+
+        [OperationContract]
+        List<CART_TABLE> searchCartByUsrID(String usrID);
+
+        [OperationContract]
+        List<CART_TABLE> searchCartByInvID(String invID);
+
+        [OperationContract]
+        bool deleteCartByUserID(String id);
+
+        [OperationContract]
+        List<CART_TABLE> getAllCarts();
 
         [OperationContract]
         List<User> searchUserByLastName(String name);

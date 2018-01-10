@@ -97,6 +97,9 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <None Include="Service References\UserServiceReference\InventoryWPFApplication.UserServiceReference.CART_TABLE.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\UserServiceReference\InventoryWPFApplication.UserServiceReference.Inventory.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

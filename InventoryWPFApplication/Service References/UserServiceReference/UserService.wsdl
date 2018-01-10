@@ -49,6 +49,42 @@
   <wsdl:message name="IUserService_searchUserByFirstName_OutputMessage">
     <wsdl:part name="parameters" element="tns:searchUserByFirstNameResponse" />
   </wsdl:message>
+  <wsdl:message name="IUserService_addCart_InputMessage">
+    <wsdl:part name="parameters" element="tns:addCart" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_addCart_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addCartResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_deleteCart_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteCart" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_deleteCart_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteCartResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_searchCartByUsrID_InputMessage">
+    <wsdl:part name="parameters" element="tns:searchCartByUsrID" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_searchCartByUsrID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:searchCartByUsrIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_searchCartByInvID_InputMessage">
+    <wsdl:part name="parameters" element="tns:searchCartByInvID" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_searchCartByInvID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:searchCartByInvIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_deleteCartByUserID_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteCartByUserID" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_deleteCartByUserID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteCartByUserIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_getAllCarts_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAllCarts" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_getAllCarts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAllCartsResponse" />
+  </wsdl:message>
   <wsdl:message name="IUserService_searchUserByLastName_InputMessage">
     <wsdl:part name="parameters" element="tns:searchUserByLastName" />
   </wsdl:message>
@@ -119,6 +155,30 @@
     <wsdl:operation name="searchUserByFirstName">
       <wsdl:input wsaw:Action="http://tempuri.org/IUserService/searchUserByFirstName" message="tns:IUserService_searchUserByFirstName_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IUserService/searchUserByFirstNameResponse" message="tns:IUserService_searchUserByFirstName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addCart">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/addCart" message="tns:IUserService_addCart_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/addCartResponse" message="tns:IUserService_addCart_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteCart">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/deleteCart" message="tns:IUserService_deleteCart_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/deleteCartResponse" message="tns:IUserService_deleteCart_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="searchCartByUsrID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/searchCartByUsrID" message="tns:IUserService_searchCartByUsrID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/searchCartByUsrIDResponse" message="tns:IUserService_searchCartByUsrID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="searchCartByInvID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/searchCartByInvID" message="tns:IUserService_searchCartByInvID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/searchCartByInvIDResponse" message="tns:IUserService_searchCartByInvID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteCartByUserID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/deleteCartByUserID" message="tns:IUserService_deleteCartByUserID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/deleteCartByUserIDResponse" message="tns:IUserService_deleteCartByUserID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllCarts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/getAllCarts" message="tns:IUserService_getAllCarts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/getAllCartsResponse" message="tns:IUserService_getAllCarts_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="searchUserByLastName">
       <wsdl:input wsaw:Action="http://tempuri.org/IUserService/searchUserByLastName" message="tns:IUserService_searchUserByLastName_InputMessage" />
@@ -207,6 +267,60 @@
     </wsdl:operation>
     <wsdl:operation name="searchUserByFirstName">
       <soap:operation soapAction="http://tempuri.org/IUserService/searchUserByFirstName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addCart">
+      <soap:operation soapAction="http://tempuri.org/IUserService/addCart" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteCart">
+      <soap:operation soapAction="http://tempuri.org/IUserService/deleteCart" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchCartByUsrID">
+      <soap:operation soapAction="http://tempuri.org/IUserService/searchCartByUsrID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchCartByInvID">
+      <soap:operation soapAction="http://tempuri.org/IUserService/searchCartByInvID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteCartByUserID">
+      <soap:operation soapAction="http://tempuri.org/IUserService/deleteCartByUserID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllCarts">
+      <soap:operation soapAction="http://tempuri.org/IUserService/getAllCarts" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

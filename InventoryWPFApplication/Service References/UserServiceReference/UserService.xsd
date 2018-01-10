@@ -14,6 +14,21 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="User" nillable="true" type="tns:User" />
+  <xs:complexType name="ArrayOfCART_TABLE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CART_TABLE" nillable="true" type="tns:CART_TABLE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCART_TABLE" nillable="true" type="tns:ArrayOfCART_TABLE" />
+  <xs:complexType name="CART_TABLE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="COUNT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="INV_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USR_ID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CART_TABLE" nillable="true" type="tns:CART_TABLE" />
   <xs:complexType name="ArrayOfInventory">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Inventory" nillable="true" type="tns:Inventory" />

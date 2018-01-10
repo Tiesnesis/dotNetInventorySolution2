@@ -50,6 +50,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CART_TABLE.cs">
+      <DependentUpon>InventoryDataClasses.tt</DependentUpon>
+    </Compile>
     <Compile Include="Inventory.cs">
       <DependentUpon>InventoryDataClasses.tt</DependentUpon>
     </Compile>

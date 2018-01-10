@@ -78,6 +78,76 @@ namespace InventoryWCFAssembly
         }
 
         [OperationBehavior(TransactionScopeRequired = true)]
+        public bool addCart(String usrID, String invID, String count)
+        {
+            CART_TABLE newCart = new CART_TABLE();
+            newCart.USR_ID = usrID;
+            newCart.INV_ID = invID;
+            newCart.COUNT = count;
+            inventoryDataContext.CART_TABLE.Add(newCart);
+            inventoryDataContext.SaveChanges();
+            return true;
+        }
+
+        [OperationBehavior(TransactionScopeRequired = true)]
+        public bool deleteCart(int id)
+        {
+            if (id == null || id.Equals(""))
+                return false;
+
+            var inventoryData = from crt in inventoryDataContext.CART_TABLE
+                                where crt.ID == id
+                                select crt;
+
+            if (inventoryData.Count() == 0)
+                return false;
+
+            inventoryDataContext.CART_TABLE.Remove(inventoryData.First());
+            inventoryDataContext.SaveChanges();
+            return true;
+        }
+
+        public bool deleteCartByUserID(String id)
+        {
+            if (id == null || id.Equals(""))
+                return false;
+
+            var inventoryData = from crt in inventoryDataContext.CART_TABLE
+                                where crt.USR_ID == id
+                                select crt;
+
+            if (inventoryData.Count() == 0)
+                return false;
+
+            foreach(var tmpCart in inventoryData)
+            {
+                inventoryDataContext.CART_TABLE.Remove(tmpCart);
+            }
+            
+            inventoryDataContext.SaveChanges();
+            return true;
+        }
+
+        public List<CART_TABLE> searchCartByUsrID(String usrID)
+        {
+            return (from crt in inventoryDataContext.CART_TABLE
+                    where crt.USR_ID == usrID
+                    select crt).ToList();
+        }
+
+        public List<CART_TABLE> searchCartByInvID(String invID)
+        {
+            return (from crt in inventoryDataContext.CART_TABLE
+                    where crt.INV_ID == invID
+                    select crt).ToList();
+        }
+
+        public List<CART_TABLE> getAllCarts()
+        {
+            return inventoryDataContext.CART_TABLE.ToList();
+        }
+
+        [OperationBehavior(TransactionScopeRequired = true)]
         public bool deleteUser(int id)
         {
             if (id == null || id.Equals(""))

@@ -190,5 +190,53 @@ namespace InventoryWPFApplication
             List<User> results = proxy.searchUserByLastName(textSearchUserLastName.Text);
             listViewUserData.ItemsSource = results;
         }
+
+        private void btnCreateAddCart_Click(object sender, RoutedEventArgs e)
+        {
+            proxy.addCart(txtCreateCartUserID.Text, txtCreateCartInvID.Text, txtCreateCartCount.Text);
+
+            List<CART_TABLE> results = proxy.getAllCarts();
+            listViewCartData.ItemsSource = results;
+        }
+
+        private void btnGetAllCarts_Click(object sender, RoutedEventArgs e)
+        {
+            List<CART_TABLE> results = proxy.getAllCarts();
+            listViewCartData.ItemsSource = results;
+        }
+
+        private void btnSearchCartUserID_Click(object sender, RoutedEventArgs e)
+        {
+            List<CART_TABLE> results = proxy.searchCartByUsrID(textBoxSearchCartUserID.Text);
+            listViewCartData.ItemsSource = results;
+        }
+
+        private void btnSearchCartInvID_Click(object sender, RoutedEventArgs e)
+        {
+            List<CART_TABLE> results = proxy.searchCartByInvID(textBoxSearchCartInvID.Text);
+            listViewCartData.ItemsSource = results;
+        }
+
+        private void btnDeleteCart_Click(object sender, RoutedEventArgs e)
+        {
+
+            int tmpInt;
+            {
+                tmpInt = System.Convert.ToInt32(txtDeleteCartID.Text);
+            }
+
+            proxy.deleteCart(tmpInt);
+
+            List<CART_TABLE> results = proxy.getAllCarts();
+            listViewCartData.ItemsSource = results;
+        }
+
+        private void btnBuy_Click(object sender, RoutedEventArgs e)
+        {
+            proxy.deleteCartByUserID(txtBuyUserID.Text);
+
+            List<CART_TABLE> results = proxy.getAllCarts();
+            listViewCartData.ItemsSource = results;
+        }
     }
 }
